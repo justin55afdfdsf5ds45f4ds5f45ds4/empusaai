@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export default function CTASection() {
   return (
     <section id="cta" className="cta">
