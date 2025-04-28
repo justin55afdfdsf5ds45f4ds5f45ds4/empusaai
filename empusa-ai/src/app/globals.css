@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,9 +21,11 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f9fb;
+  color: #222;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -39,4 +45,251 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.navbar {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.navbar .logo {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #2563eb;
+  letter-spacing: -1px;
+}
+.navbar .nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.navbar .nav-links a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.navbar .nav-links a:hover {
+  color: #2563eb;
+}
+.navbar .auth {
+  display: flex;
+  gap: 1rem;
+}
+.navbar .auth a {
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  background: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.navbar .auth a.signup {
+  background: #2563eb;
+  color: #fff;
+}
+.navbar .auth a:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.hero {
+  width: 100%;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f7f9fb 100%);
+  padding: 8rem 2rem 5rem 2rem;
+  text-align: center;
+  margin-top: 80px;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 1rem;
+}
+.hero h1 span {
+  color: #2563eb;
+}
+.hero p {
+  font-size: 1.3rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+.hero .hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.hero .hero-actions a {
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s;
+}
+.hero .hero-actions .primary {
+  background: #2563eb;
+  color: #fff;
+}
+.hero .hero-actions .secondary {
+  background: #fff;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+}
+.hero .hero-actions .secondary:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.features {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+.feature-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(37,99,235,0.07);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+.feature-card:hover {
+  box-shadow: 0 6px 32px rgba(37,99,235,0.13);
+}
+.feature-card .icon {
+  font-size: 2.5rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+.feature-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.feature-card p {
+  color: #555;
+}
+
+.workflow {
+  background: #e0e7ff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.workflow h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.workflow-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.workflow-step {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.07);
+}
+.workflow-step .step-number {
+  background: #2563eb;
+  color: #fff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin: 0 auto 0.5rem auto;
+}
+.workflow-step p {
+  font-weight: 600;
+  color: #333;
+}
+
+.testimonials {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+.testimonials h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.testimonial-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.testimonial-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(37,99,235,0.07);
+  padding: 2rem 1.5rem;
+}
+.testimonial-card p {
+  color: #444;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.testimonial-card .author {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.cta {
+  background: #2563eb;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.cta h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.cta p {
+  color: #dbeafe;
+  margin-bottom: 2rem;
+}
+.cta a {
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  background: #fff;
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.cta a:hover {
+  background: #dbeafe;
+}
+
+.footer {
+  width: 100%;
+  background: #fff;
+  color: #888;
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  font-size: 1rem;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 2rem;
 }
