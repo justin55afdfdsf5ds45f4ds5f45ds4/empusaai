@@ -1,8 +1,9 @@
-import NextAuth from 'next-auth';
+import NextAuth, { AuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 // import CredentialsProvider from 'next-auth/providers/credentials'; // We can add this later for email/password
 
-export const authOptions = {
+// Define authOptions but DO NOT export it directly
+const authOptions: AuthOptions = {
   // Configure one or more authentication providers
   providers: [
     GoogleProvider({
@@ -55,6 +56,8 @@ export const authOptions = {
   // },
 };
 
+// Initialize NextAuth with the options
 const handler = NextAuth(authOptions);
 
+// Export only the handlers for GET and POST methods
 export { handler as GET, handler as POST }; 
